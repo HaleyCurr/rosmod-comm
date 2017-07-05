@@ -13,7 +13,7 @@ else()
     message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-find_package(catkin REQUIRED COMPONENTS rosmod std_msgs)
+find_package(catkin REQUIRED COMPONENTS rosmod rosmod_jsoncpp std_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -25,7 +25,7 @@ find_package(catkin REQUIRED COMPONENTS rosmod std_msgs)
 # catkin_python_setup()
 
 #
-## Declare ROS messages, services and actions 
+## Declare ROS messages, services and actions
 #
 
 ## To declare and build messages, services or actions from within this
@@ -72,7 +72,7 @@ find_package(catkin REQUIRED COMPONENTS rosmod std_msgs)
 #)
 
 #
-## catkin specific configuration 
+## catkin specific configuration
 #
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
@@ -89,7 +89,7 @@ catkin_package(
 )
 
 #
-## Build 
+## Build
 #
 
 ## Specify additional locations of header files
@@ -117,7 +117,7 @@ include_directories(
 # )
 
 #
-## Install 
+## Install
 #
 
 # all install targets should use catkin DESTINATION variables
@@ -152,7 +152,7 @@ include_directories(
 # )
 
 #
-## Testing 
+## Testing
 #
 
 ## Add gtest based cpp test target and link libraries
@@ -168,7 +168,7 @@ include_directories(include ../rosmod_jsoncpp/include ${catkin_INCLUDE_DIRS})
 # make rosmod_component library
 add_library(rosmod_component
   src/rosmod_component/Component.cpp)
-target_link_libraries(rosmod_component rosmod_jsoncpp ${catkin_LIBRARIES})
+target_link_libraries(rosmod_component ${catkin_LIBRARIES})
 # install rosmod component
 install(TARGETS rosmod_component
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

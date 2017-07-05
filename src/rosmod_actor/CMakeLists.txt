@@ -28,7 +28,7 @@ ADD_DEFINITIONS(-DUSE_ROSMOD)
 # catkin_python_setup()
 
 #
-## Declare ROS messages, services and actions 
+## Declare ROS messages, services and actions
 #
 
 ## To declare and build messages, services or actions from within this
@@ -75,7 +75,7 @@ ADD_DEFINITIONS(-DUSE_ROSMOD)
 #)
 
 #
-## catkin specific configuration 
+## catkin specific configuration
 #
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
@@ -90,7 +90,7 @@ catkin_package(
 )
 
 #
-## Build 
+## Build
 #
 
 ## Specify additional locations of header files
@@ -118,7 +118,7 @@ include_directories(
 # )
 
 #
-## Install 
+## Install
 #
 
 # all install targets should use catkin DESTINATION variables
@@ -153,7 +153,7 @@ include_directories(
 # )
 
 #
-## Testing 
+## Testing
 #
 
 ## Add gtest based cpp test target and link libraries
@@ -168,10 +168,9 @@ include_directories(
 # make rosmod_actor executable
 add_executable(rosmod_actor
 	       src/rosmod_actor/main.cpp)
-target_link_libraries(rosmod_actor rosmod_component rosmod_jsoncpp dl ${catkin_LIBRARIES})
+target_link_libraries(rosmod_actor dl ${catkin_LIBRARIES})
 # install rosmod_actor executable
 install(TARGETS rosmod_actor
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})
-

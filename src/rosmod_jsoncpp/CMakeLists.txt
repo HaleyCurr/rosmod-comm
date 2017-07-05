@@ -13,6 +13,10 @@ else()
     message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
+find_package(catkin REQUIRED COMPONENTS
+  cpp_common message_generation rosconsole rostime roscpp_serialization roscpp_traits rosgraph_msgs rostime std_msgs xmlrpcpp
+  )
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -23,7 +27,7 @@ endif()
 # catkin_python_setup()
 
 #
-## Declare ROS messages, services and actions 
+## Declare ROS messages, services and actions
 #
 
 ## To declare and build messages, services or actions from within this
@@ -70,7 +74,7 @@ endif()
 #)
 
 #
-## catkin specific configuration 
+## catkin specific configuration
 #
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
@@ -84,7 +88,7 @@ catkin_package(
 )
 
 #
-## Build 
+## Build
 #
 
 ## Specify additional locations of header files
@@ -112,7 +116,7 @@ include_directories(
 # )
 
 #
-## Install 
+## Install
 #
 
 # all install targets should use catkin DESTINATION variables
@@ -147,7 +151,7 @@ include_directories(
 # )
 
 #
-## Testing 
+## Testing
 #
 
 ## Add gtest based cpp test target and link libraries
